@@ -33,6 +33,7 @@ number_of_drinks = 0
 order_number = 1
 user_continue_choice = "Y"
 total = 0
+
 #Keep displaying the cafe section and extra selection section until user's continue choice is N
 while(user_continue_choice == "Y" or user_continue_choice == "y"):
     extra_status = {"Sugar":"","Cream":"","Syrup":""}
@@ -68,6 +69,7 @@ while(user_continue_choice == "Y" or user_continue_choice == "y"):
             drink_product = drink_dictionary[user_drink_selection]
             drink_cost = drink_cost_dictionary[drink_product]
             subtotal += drink_cost_dictionary[drink_product]
+            number_of_drinks += 1
         else:
             print("Please enter a number between 1 and 3.")
         print("")
@@ -97,7 +99,7 @@ while(user_continue_choice == "Y" or user_continue_choice == "y"):
                  extra_status[user_extra_choice] = "✓" 
                  print(f'{user_extra_choice} added (+${extras_cost_dictionary[user_extra_choice]})')
                  subtotal += extras_cost_dictionary[user_extra_choice]
-        else:
+        elif user_continue_choice != 0:
                 print("Please enter a number between 0 and 3.")
     
 #Print Order Summary
@@ -110,13 +112,15 @@ while(user_continue_choice == "Y" or user_continue_choice == "y"):
     extra_contain = False
     for status in extra_status.values():
         if status == "✓":
+            extra_contain = True
             break
             
     if extra_contain == True:
+        print("Extras:")
         for extra, status in extra_status.items():
             if status == "✓":
-                print(f'{" • Sugar":<31}{"$0.10":<7}')
-                subtotal += extras_cost_dictionary[extra]
+                print(f' • {extra:<28}${extras_cost_dictionary[extra]:<7.2f}')
+                
     
     if subtotal > PRICE_FOR_DISCOUNT:
         print(f'{"Discount:":<30}-${subtotal*DISCOUNT:<5.2f}')
