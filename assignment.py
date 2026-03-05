@@ -99,7 +99,7 @@ while(user_continue_choice == "Y" or user_continue_choice == "y"):
                  extra_status[user_extra_choice] = "✓" 
                  print(f'{user_extra_choice} added (+${extras_cost_dictionary[user_extra_choice]})')
                  subtotal += extras_cost_dictionary[user_extra_choice]
-        elif user_continue_choice != 0:
+        elif user_extra_selection != 0:
                 print("Please enter a number between 0 and 3.")
     
 #Print Order Summary
