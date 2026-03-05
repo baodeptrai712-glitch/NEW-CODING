@@ -1,0 +1,323 @@
+Test run
+
+Test 1:
+======================================
+        WELCOME TO Python CAFE        
+======================================
+
+Order #1
+--------
+
+======================================
+            Beverage Menu:
+======================================
+1. Coffee          $3.00
+2. Tea             $2.50
+3. Hot chocolate   $3.75
+======================================
+Your selection (1-3): 0
+Please enter a number between 1 and 3.
+Your selection (1-3): 4
+Please enter a number between 1 and 3.
+Your selection (1-3): 
+
+Test run 2:
+======================================
+        WELCOME TO Python CAFE        
+======================================
+
+Order #1
+--------
+
+======================================
+            Beverage Menu:
+======================================
+1. Coffee          $3.00
+2. Tea             $2.50
+3. Hot chocolate   $3.75
+======================================
+Your selection (1-3): 1
+
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10 
+2. Cream           $0.50 
+3. Syrup           $0.75 
+0. Finish order
+Select extra (0-3): -1
+Please enter a number between 0 and 3.
+Select extra (0-3): 4
+Please enter a number between 0 and 3.
+Select extra (0-3):
+
+Test 3:
+======================================
+        WELCOME TO Python CAFE        
+======================================
+
+Order #1
+--------
+
+======================================
+            Beverage Menu:
+======================================
+1. Coffee          $3.00
+2. Tea             $2.50
+3. Hot chocolate   $3.75
+======================================
+Your selection (1-3): 1
+
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10 
+2. Cream           $0.50 
+3. Syrup           $0.75 
+0. Finish order
+Select extra (0-3): 0
+
+======================================
+            ORDER SUMMARY
+======================================
+Beverage: Coffee               $3.00
+Subtotal:                      $3.00
+Would you like to order another drink? (Y/N): n
+======================================
+           RECEIPT SUMMARY
+======================================
+
+Number of drinks                1
+Subtotal                        $3.00
+Tax (5%)                        $0.15
+Grand total                     $3.15
+======================================
+Thank you for visiting Python Cafe!
+We hope to see you again soon!
+
+Test 4:
+======================================
+        WELCOME TO Python CAFE        
+======================================
+
+Order #1
+--------
+
+======================================
+            Beverage Menu:
+======================================
+1. Coffee          $3.00
+2. Tea             $2.50
+3. Hot chocolate   $3.75
+======================================
+Your selection (1-3): 3
+
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10 
+2. Cream           $0.50 
+3. Syrup           $0.75 
+0. Finish order
+Select extra (0-3): 1
+Sugar added (+$0.10)
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10 ✓
+2. Cream           $0.50
+3. Syrup           $0.75
+0. Finish order
+Select extra (0-3): 1
+Sugar is already added.
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10 ✓
+2. Cream           $0.50
+3. Syrup           $0.75
+0. Finish order
+Select extra (0-3): 3
+Syrup added (+$0.75)
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10 ✓
+2. Cream           $0.50
+3. Syrup           $0.75 ✓
+0. Finish order
+Select extra (0-3): 2
+Cream added (+$0.50)
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10 ✓
+2. Cream           $0.50 ✓
+3. Syrup           $0.75 ✓
+0. Finish order
+Select extra (0-3): 0
+
+======================================
+            ORDER SUMMARY
+======================================
+Beverage: Hot Chocolate        $3.75
+Extras:
+ • Sugar                       $0.10
+ • Cream                       $0.50
+ • Syrup                       $0.75
+Discount:                     -$0.51
+After discount:                $4.59
+Subtotal:                      $4.59
+Would you like to order another drink? (Y/N): N
+======================================
+           RECEIPT SUMMARY
+======================================
+
+Number of drinks                1
+Subtotal                        $4.59
+Tax (5%)                        $0.23
+Grand total                     $4.82
+======================================
+Thank you for visiting Python Cafe!
+We hope to see you again soon!
+
+Test 5:
+======================================
+        WELCOME TO Python CAFE        
+======================================
+
+Order #1
+--------
+
+======================================
+            Beverage Menu:
+======================================
+1. Coffee          $3.00
+2. Tea             $2.50
+3. Hot chocolate   $3.75
+======================================
+Your selection (1-3): 1
+
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10 
+2. Cream           $0.50 
+3. Syrup           $0.75 
+0. Finish order
+Select extra (0-3): 1
+Sugar added (+$0.10)
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10 ✓
+2. Cream           $0.50
+3. Syrup           $0.75
+0. Finish order
+Select extra (0-3): 0
+
+======================================
+            ORDER SUMMARY
+======================================
+Beverage: Coffee               $3.00
+Extras:
+ • Sugar                       $0.10
+Subtotal:                      $3.10
+Would you like to order another drink? (Y/N): y
+======================================
+        WELCOME TO Python CAFE
+======================================
+
+Order #2
+--------
+
+======================================
+            Beverage Menu:
+======================================
+1. Coffee          $3.00
+2. Tea             $2.50
+3. Hot chocolate   $3.75
+======================================
+Your selection (1-3): 2
+
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10
+2. Cream           $0.50
+3. Syrup           $0.75
+0. Finish order
+Select extra (0-3): 2
+Cream added (+$0.50)
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10
+2. Cream           $0.50 ✓
+3. Syrup           $0.75
+0. Finish order
+Select extra (0-3): 0
+
+======================================
+            ORDER SUMMARY
+======================================
+Beverage: Tea                  $2.50
+Extras:
+ • Cream                       $0.50
+Subtotal:                      $3.00
+Would you like to order another drink? (Y/N): N
+======================================
+           RECEIPT SUMMARY
+======================================
+
+Number of drinks                2
+Subtotal                        $6.10
+Tax (5%)                        $0.30
+Grand total                     $6.41
+======================================
+Thank you for visiting Python Cafe!
+We hope to see you again soon!
+
+Test run 6:
+======================================
+        WELCOME TO Python CAFE        
+======================================
+
+Order #1
+--------
+
+======================================
+            Beverage Menu:
+======================================
+1. Coffee          $3.00
+2. Tea             $2.50
+3. Hot chocolate   $3.75
+======================================
+Your selection (1-3): 1
+
+======================================
+              Add Extras
+======================================
+1. Sugar           $0.10 
+2. Cream           $0.50 
+3. Syrup           $0.75 
+0. Finish order
+Select extra (0-3): 0
+
+======================================
+            ORDER SUMMARY
+======================================
+Beverage: Coffee               $3.00
+Subtotal:                      $3.00
+Would you like to order another drink? (Y/N):
+======================================
+           RECEIPT SUMMARY
+======================================
+
+Number of drinks                1
+Subtotal                        $3.00
+Tax (5%)                        $0.15
+Grand total                     $3.15
+======================================
+Thank you for visiting Python Cafe!
+We hope to see you again soon!

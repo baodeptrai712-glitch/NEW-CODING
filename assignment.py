@@ -26,8 +26,8 @@ PRICE_FOR_DISCOUNT:Final = 5.00
 #Constant Dictionary for extras and drinks
 drink_dictionary = {1:"Coffee",2:"Tea",3:"Hot Chocolate"}
 extra_dictionary = {1:"Sugar",2:"Cream",3:"Syrup"}
-drink_cost_dictionary = {"Coffee":3.00,"Tea":2.50,"Hot Chocolate":3.75}
-extras_cost_dictionary = {"Sugar":0.10,"Cream":0.50,"Syrup":0.75}
+drink_cost_dictionary = {"Coffee":COFFEE_COST,"Tea":TEA_COST,"Hot Chocolate":HOT_CHOCOLATE_COST}
+extras_cost_dictionary = {"Sugar":SUGAR_COST,"Cream":CREAM_COST,"Syrup":SYRUP_COST}
 
 number_of_drinks = 0
 order_number = 1
@@ -37,34 +37,34 @@ total = 0
 #Keep displaying the cafe section and extra selection section until user's continue choice is N
 while(user_continue_choice == "Y" or user_continue_choice == "y"):
     extra_status = {"Sugar":"","Cream":"","Syrup":""}
-    user_drink_selection = -1
     subtotal = 0
     ''' 
         Cafe section:
         Display cafe menu and allow user to choose drink
         Keep displaying the menu until user's choice is valid
     '''
-    while(user_drink_selection < 1 or user_drink_selection > 3):
-        print("=" * 38)
-        print(f'{"WELCOME TO Python CAFE":^38}')
-        print("=" * 38)
-        print("")
+    print("=" * 38)
+    print(f'{"WELCOME TO Python CAFE":^38}')
+    print("=" * 38)
+    print("")
 
-        print(f'Order #{order_number}')
-        order_number += 1
-        print("-" * 8)
-        print("")
+    print(f'Order #{order_number}')
+    order_number += 1
+    print("-" * 8)
+    print("")
 
-        print("=" * 38)
-        print(f'{"Beverage Menu:":^38}')
-        print("=" * 38)
-        print(f'{"1.":<3}{"Coffee":<16}{"$3.00"}')
-        print(f'{"2.":<3}{"Tea":<16}{"$2.50"}')
-        print(f'{"3.":<3}{"Hot chocolate":<16}{"$3.75"}')
-        print("=" * 38)
+    print("=" * 38)
+    print(f'{"Beverage Menu:":^38}')
+    print("=" * 38)
+    print(f'{"1.":<3}{"Coffee":<16}{"$3.00"}')
+    print(f'{"2.":<3}{"Tea":<16}{"$2.50"}')
+    print(f'{"3.":<3}{"Hot chocolate":<16}{"$3.75"}')
+    print("=" * 38)
 
+    #Take user drink number
+    user_drink_selection = -1
+    while user_drink_selection < 1 or user_drink_selection > 3:
         user_drink_selection = int(input("Your selection (1-3): "))
-        print("")
         if 1 <= user_drink_selection <= 3:
             drink_product = drink_dictionary[user_drink_selection]
             drink_cost = drink_cost_dictionary[drink_product]
@@ -72,15 +72,16 @@ while(user_continue_choice == "Y" or user_continue_choice == "y"):
             number_of_drinks += 1
         else:
             print("Please enter a number between 1 and 3.")
-        print("")
+    print("")
 
     """
         Extra selection section:
         Display extra selection menu
         Keep display the extra selection menu until user's choice is 0
     """
-    user_extra_selection = -1
-    while user_extra_selection != 0:
+    #Print Extra menu, print again if user choice number is in range 1 to 3
+    user_extra_selection = 1
+    while 1 <= user_extra_selection <= 3:
         print("=" * 38)
         print(f'{"Add Extras":^38}')
         print("=" * 38)
@@ -89,17 +90,19 @@ while(user_continue_choice == "Y" or user_continue_choice == "y"):
         print(f'{"3.":<3}{"Syrup":<16}{"$0.75":<6}{extra_status["Syrup"]}')
         print(f'{"0.":<3}{"Finish order"}')
 
-        user_extra_selection = int(input("Select extra (0-3): "))
-    
-        if 1 <= user_extra_selection <= 3:
-            user_extra_choice = extra_dictionary[user_extra_selection]
-            if extra_status[user_extra_choice] == "✓":
-                 print(f'{user_extra_choice} is already added.')
-            else:
-                 extra_status[user_extra_choice] = "✓" 
-                 print(f'{user_extra_choice} added (+${extras_cost_dictionary[user_extra_choice]})')
-                 subtotal += extras_cost_dictionary[user_extra_choice]
-        elif user_extra_selection != 0:
+    #Take user extra number, loop when extra number not in range 0 to 3
+        user_extra_selection = -1
+        while user_extra_selection < 0 or user_extra_selection > 3 :
+            user_extra_selection = int(input("Select extra (0-3): "))
+            if 1 <= user_extra_selection <= 3:
+                user_extra_choice = extra_dictionary[user_extra_selection]
+                if extra_status[user_extra_choice] == "✓":
+                     print(f'{user_extra_choice} is already added.')
+                else:
+                    extra_status[user_extra_choice] = "✓" 
+                    print(f'{user_extra_choice} added (+${extras_cost_dictionary[user_extra_choice]:.2f})')
+                    subtotal += extras_cost_dictionary[user_extra_choice]
+            elif user_extra_selection != 0:
                 print("Please enter a number between 0 and 3.")
     
 #Print Order Summary
